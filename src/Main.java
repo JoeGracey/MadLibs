@@ -15,5 +15,13 @@ public class Main {
 
 	    :! = newline, :, = comma, :. = period, :< :> = quotes
 	     */
+
+        System.out.println("Zoos are places where wild " + plural_noun + " are kept in pens or " +
+                "cages\nso that " + another_plural_noun + " can come and look at them. There is a" +
+                " zoo\nin the park besides the " + type_of_liquid + " fountain. When it is " +
+                "feeding time,\nall the animals make " + adjective + " noises. The elephant goes " +
+                funny_noise + "\nand the turtledoves go " + another_funny_noise + ". My favorite " +
+                "animal is the\n" + another_adjective + " " + animal + ", so fast it can outrun " +
+                "a/an " + another_animal + ".\nYou never know what you will find at the zoo.");
     }
 }
