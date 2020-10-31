@@ -29,6 +29,7 @@ public class Main {
         String another_adjective = "hungry";
         String animal = "mouse";
         String another_animal = "blue-fin tuna";
+        charhar playAgain = 'y';
 
         System.out.println("Zoos are places where wild " + plural_noun + " are kept in pens or " +
                 "cages\nso that " + another_plural_noun + " can come and look at them. There is a" +
@@ -38,6 +39,9 @@ public class Main {
                 "\"" + ". My favorite animal is the\n" + another_adjective + " " + animal + ", so fast it can outrun " +
                 "a/an " + another_animal + ".\nYou never know what you will find at the zoo.");
 
+        if() {
+
+        }
         System.out.println(" ");
         System.out.println("Do you want to play again (y/n)?");
         System.out.println("Thank you for playing.");
