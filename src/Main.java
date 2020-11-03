@@ -5,7 +5,6 @@ public class Main {
 
     public static void main(String[] args) {
         madLibs();
-        playAgain();
     }
 
     public static void madLibs() {
@@ -25,24 +24,26 @@ public class Main {
 
         System.out.println(" ");
         playAgain();
+
     }
 
     public static void playAgain() {
         Scanner scannerObject = new Scanner(System.in);
 
+        System.out.println(" ");
         System.out.print("Do you want to play again (y/n)? ");
         String yesOrNo = scannerObject.nextLine();
+        System.out.println(" ");
 
         if(yesOrNo.equals("y") || yesOrNo.equals("Y")) {
             madLibs();
         } else if (yesOrNo.equals("n") || yesOrNo.equals("N")){
             System.out.println("Thank you for playing.");
         } else {
-            System.out.print("Please enter Y or N ");
+            System.out.print("Please enter a 'y' or a 'n' ");
             System.out.println(" ");
             playAgain();
         }
     }
-
 
 }
