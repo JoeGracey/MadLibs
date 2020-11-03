@@ -4,8 +4,12 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
+        madLibs();
+        playAgain();
+    }
 
-        Scanner scannerObject = new Scanner(System.in);
+    public static void madLibs() {
+        //Scanner scannerObject = new Scanner(System.in);
 
         String[] madLibWords = new String[] {"boys", "girls", "lemonade", "fuzzy", "squeak",
                 "snort", "hungry", "mouse", "blue-fin tuna"};
@@ -20,17 +24,23 @@ public class Main {
                 "what you will find at the zoo.");
 
         System.out.println(" ");
+        playAgain();
+    }
 
-        System.out.println("Do you want to play again (y/n)?");
-        String playAgain = scannerObject.nextLine();
+    public static void playAgain() {
+        Scanner scannerObject = new Scanner(System.in);
 
-        if(playAgain.equals("y") || playAgain.equals("Y")) {
-            //print out paragraph again
+        System.out.print("Do you want to play again (y/n)? ");
+        String yesOrNo = scannerObject.nextLine();
 
-        } else if (playAgain.equals("n") || playAgain.equals("N")){
+        if(yesOrNo.equals("y") || yesOrNo.equals("Y")) {
+            madLibs();
+        } else if (yesOrNo.equals("n") || yesOrNo.equals("N")){
             System.out.println("Thank you for playing.");
         } else {
-            System.out.println("Please enter Y or N");
+            System.out.print("Please enter Y or N ");
+            System.out.println(" ");
+            playAgain();
         }
     }
 
