@@ -69,5 +69,7 @@ public class Main {
         System.out.print("Another animal: ");
         String anotherAnimal = scanner.nextLine();
 
+        System.out.println("TEST");
+
     }
 }
