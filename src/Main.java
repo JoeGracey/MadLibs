@@ -1,19 +1,75 @@
+import java.io.*;
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
-	    /*
-	    Zoos are places where :plural_noun are kept in pens or cages :!
-	    so that :plural_noun can come and look at them :. There is a zoo :!
-	    in the park beside the :type_of_liquid fountain :. When it is feeding time :, :!
-	    all the animals make :adjective noises. The elephant goes :< :funny_noise :> :!
-	    and the turtledoves go :< :another_funny_noise :. :> My favorite animal is the :!
-	    :adjective :animal :, so fast it can outrun a/an :another_animal :. :!
-	    You never know what you will find at the zoo :.
+	    String theString;
+        File fileObject = new File("src/" + getFileName());
+        Scanner scanner = null;
 
-	    Do you want to play again (y/n)? n
-	    Thank you for playing.
+        try {
+            scanner = new Scanner(fileObject);
+        } catch(FileNotFoundException exception) {
+            exception.printStackTrace();
+        }
 
-	    :! = newline, :, = comma, :. = period, :< :> = quotes
-	     */
+        theString = scanner.nextLine();
+
+        while(scanner.hasNextLine()) {
+            theString = theString + "\n" + scanner.nextLine();
+        }
+
+        char[] madLibArray = theString.toCharArray();
+
+        try {
+            questions(madLibArray);
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(fileObject));
+            bufferedReader.lines().forEach(System.out::println);
+        } catch(IOException exception) {
+            exception.printStackTrace();
+        }
+    }
+
+    private static String getFileName() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter file name: ");
+        return scanner.next();
+    }
+
+    private static void questions(char[] madLibArray) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Please enter the following:");
+
+        System.out.print("Plural noun: ");
+        String pluralNoun = scanner.nextLine();
+
+        System.out.print("Another plural noun: ");
+        String anotherPluralNoun = scanner.nextLine();
+
+        System.out.print("Type of liquid: ");
+        String typeOfLiquid = scanner.nextLine();
+
+        System.out.print("Adjective: ");
+        String adjective = scanner.nextLine();
+
+        System.out.print("Funny noise: ");
+        String funnyNoise = scanner.nextLine();
+
+        System.out.print("Another funny noise: ");
+        String anotherFunnyNoise = scanner.nextLine();
+
+        System.out.print("Another adjective: ");
+        String anotherAdjective = scanner.nextLine();
+
+        System.out.print("Animal: ");
+        String animal = scanner.nextLine();
+
+        System.out.print("Another animal: ");
+        String anotherAnimal = scanner.nextLine();
+
+        System.out.println("TEST");
+
     }
 }
