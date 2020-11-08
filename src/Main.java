@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-	    String theString;
+	    String[][] theString = new String[255][255];
         File fileObject = new File("src/" + getFileName());
         Scanner scanner = null;
 
@@ -14,16 +14,17 @@ public class Main {
             exception.printStackTrace();
         }
 
-        theString = scanner.nextLine();
-
+        int count = 0;
+        
+        String text = null; 
         while(scanner.hasNextLine()) {
-            theString = theString + "\n" + scanner.nextLine();
+            text = scanner.next();
+            theString[count].pu
+            System.out.println(text.length());
         }
 
-        char[] madLibArray = theString.toCharArray();
-
         try {
-            questions(madLibArray);
+            questions(text);
             BufferedReader bufferedReader = new BufferedReader(new FileReader(fileObject));
             bufferedReader.lines().forEach(System.out::println);
         } catch(IOException exception) {
@@ -37,39 +38,12 @@ public class Main {
         return scanner.next();
     }
 
-    private static void questions(char[] madLibArray) {
+    private static void questions(String madLibArray) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Please enter the following:");
-
-        System.out.print("Plural noun: ");
-        String pluralNoun = scanner.nextLine();
-
-        System.out.print("Another plural noun: ");
-        String anotherPluralNoun = scanner.nextLine();
-
-        System.out.print("Type of liquid: ");
-        String typeOfLiquid = scanner.nextLine();
-
-        System.out.print("Adjective: ");
-        String adjective = scanner.nextLine();
-
-        System.out.print("Funny noise: ");
-        String funnyNoise = scanner.nextLine();
-
-        System.out.print("Another funny noise: ");
-        String anotherFunnyNoise = scanner.nextLine();
-
-        System.out.print("Another adjective: ");
-        String anotherAdjective = scanner.nextLine();
-
-        System.out.print("Animal: ");
-        String animal = scanner.nextLine();
-
-        System.out.print("Another animal: ");
-        String anotherAnimal = scanner.nextLine();
-
-        System.out.println("TEST");
+        for(int i = 0; i <= madLibArray.length(); i++) {
+            System.out.println(madLibArray.length());
+        }
 
     }
 }
